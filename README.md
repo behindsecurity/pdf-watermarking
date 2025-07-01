@@ -21,23 +21,23 @@ Supports:
 ## Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/pdf-watermarker.git
-   cd pdf-watermarker
+```bash
+git clone https://github.com/your-username/pdf-watermarker.git
+cd pdf-watermarker
 ````
 
 2. (Optional) Create and activate a virtual environment:
 
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
 3. Install dependencies:
 
-   ```bash
-   pip install PyMuPDF Pillow
-   ```
+```bash
+pip install PyMuPDF Pillow
+```
 
 ---
 
@@ -61,23 +61,23 @@ python watermark.py input.pdf output.pdf [options]
 
 ### Image Watermark Options
 
-| Option             | Type  | Default | Description                                 |
+| Option | Type  | Default | Description|
 | ------------------ | ----- | ------- | ------------------------------------------- |
-| `--image_opacity`  | float | 0.3     | Opacity of the watermark image (0.0 to 1.0) |
-| `--shadow`         | flag  | off     | Enable drop-shadow under the watermark      |
-| `--shadow_opacity` | float | 0.3     | Opacity of the drop-shadow (0.0 to 1.0)     |
+| `--image_opacity`  | float | 0.3  | Opacity of the watermark image (0.0 to 1.0) |
+| `--shadow`| flag  | off  | Enable drop-shadow under the watermark|
+| `--shadow_opacity` | float | 0.3  | Opacity of the drop-shadow (0.0 to 1.0)  |
 
 ### Text Watermark Options
 
-| Option             | Type   | Default   | Description                                                |
+| Option | Type| Default| Description|
 | ------------------ | ------ | --------- | ---------------------------------------------------------- |
-| `--watermark_text` | string | —         | Text string to render as watermark (e.g. `"CONFIDENTIAL"`) |
-| `--font_path`      | string | system    | Path to a `.ttf` font file (uses built-in if omitted)      |
-| `--font_size`      | int    | 36        | Font size in points                                        |
-| `--text_color`     | HEX    | `#000000` | Text color in `#RRGGBB` format                             |
-| `--text_opacity`   | float  | 0.3       | Opacity of the text (0.0 to 1.0)                           |
-| `--shadow`         | flag   | off       | Enable drop-shadow under the text                          |
-| `--shadow_opacity` | float  | 0.3       | Opacity of the drop-shadow (0.0 to 1.0)                    |
+| `--watermark_text` | string | —| Text string to render as watermark (e.g. `"CONFIDENTIAL"`) |
+| `--font_path`| string | system | Path to a `.ttf` font file (uses built-in if omitted)|
+| `--font_size`| int | 36  | Font size in points |
+| `--text_color`  | HEX | `#000000` | Text color in `#RRGGBB` format  |
+| `--text_opacity`| float  | 0.3 | Opacity of the text (0.0 to 1.0)|
+| `--shadow`| flag| off | Enable drop-shadow under the text  |
+| `--shadow_opacity` | float  | 0.3 | Opacity of the drop-shadow (0.0 to 1.0)  |
 
 ---
 
@@ -85,14 +85,14 @@ python watermark.py input.pdf output.pdf [options]
 
 You can update one or more metadata fields in the same command:
 
-| Option       | Description                      |
+| Option | Description |
 | ------------ | -------------------------------- |
-| `--title`    | PDF title                        |
-| `--author`   | PDF author                       |
-| `--subject`  | PDF subject/description          |
+| `--title` | PDF title|
+| `--author`| PDF author  |
+| `--subject`  | PDF subject/description |
 | `--keywords` | Comma-separated list of keywords |
-| `--creator`  | PDF creator                      |
-| `--producer` | PDF producer                     |
+| `--creator`  | PDF creator |
+| `--producer` | PDF producer|
 
 ---
 
@@ -100,33 +100,33 @@ You can update one or more metadata fields in the same command:
 
 1. **Add a semi-transparent “CONFIDENTIAL” text watermark with shadow:**
 
-   ```bash
-   python watermark.py report.pdf report_confidential.pdf \
-     --watermark_text "CONFIDENTIAL" \
-     --font_size 48 \
-     --text_color "#FF0000" \
-     --text_opacity 0.2 \
-     --shadow \
-     --shadow_opacity 0.4
-   ```
+```bash
+python watermark.py report.pdf report_confidential.pdf \
+  --watermark_text "CONFIDENTIAL" \
+  --font_size 48 \
+  --text_color "#FF0000" \
+  --text_opacity 0.2 \
+  --shadow \
+  --shadow_opacity 0.4
+```
 
 2. **Stamp all pages with a logo image at 50% opacity:**
 
-   ```bash
-   python watermark.py slides.pdf slides_watermarked.pdf \
-     --watermark_image logo.png \
-     --image_opacity 0.5
-   ```
+```bash
+python watermark.py slides.pdf slides_watermarked.pdf \
+  --watermark_image logo.png \
+  --image_opacity 0.5
+```
 
 3. **Add watermark and update metadata in one go:**
 
-   ```bash
-   python watermark.py thesis.pdf thesis_final.pdf \
-     --watermark_text "DRAFT" \
-     --title "My Thesis" \
-     --author "Alice Smith" \
-     --keywords "thesis,watermark,PyMuPDF"
-   ```
+```bash
+python watermark.py thesis.pdf thesis_final.pdf \
+  --watermark_text "DRAFT" \
+  --title "My Thesis" \
+  --author "Alice Smith" \
+  --keywords "thesis,watermark,PyMuPDF"
+```
 
 ---
 
